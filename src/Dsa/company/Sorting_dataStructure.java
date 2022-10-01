@@ -27,7 +27,7 @@ public class Sorting_dataStructure {
 
 
 
-        //Selection sort
+        //Selection sort, Time complexity is O(n^2)
         for(int i=0; i<arr.length-1; i++) {
             int smallest = i;
             for(int j=i+1; j<arr.length; j++) {
@@ -43,7 +43,7 @@ public class Sorting_dataStructure {
 
          */
 
-        //insertion sort
+        //insertion sort , Time complexity is O(n^2)
         for(int i=1;i<arr.length;i++){
             int curr = arr[i];
             int j=i-1;
