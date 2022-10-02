@@ -1,7 +1,5 @@
 package Dsa.company;
 
-import java.awt.event.AdjustmentEvent;
-
 public class Sorting_dataStructure {
     //for printing the array
     public static void printArray(int arr[]){
