@@ -1,5 +1,7 @@
 package Dsa.company;
 
+import java.awt.event.AdjustmentEvent;
+
 public class Sorting_dataStructure {
     //for printing the array
     public static void printArray(int arr[]){
@@ -7,8 +9,52 @@ public class Sorting_dataStructure {
             System.out.print(arr[i]+" ");
         }
     }
+    //Merge sort, Divide & conquer technique
+    //conquer , Time complexity --> O(n)
+    public static void conquer(int arr[],int si, int mid, int ei){
+        int []merged = new int[ei-si+1];
+        int idx1 = si;
+        int idx2 = mid+1;
+        int x = 0;
+        while (idx1<=mid && idx2<=ei){
+            //till doing sort
+            if(arr[idx1]<=arr[idx2]){
+                merged[x++] = arr[idx1++];
+            }
+            else {
+                merged[x++] = arr[idx2++];
+            }
+        }
+        while (idx1<=mid){
+            merged[x++] = arr[idx1++];
+        }
+        while (idx2<=ei){
+            merged[x++] = arr[idx2++];
+        }
+        //coping merged array elements in original array
+        for (int i=0,j=si; i<merged.length;i++,j++){
+            arr[j] = merged[i];
+        }
+    }
+
+    //Divide, time complexity--> O(log n)
+    public static void divide(int arr[],int si, int ei){
+        //base condition
+        if (si>=ei){
+            return;
+        }
+        int mid = si+(ei-si)/2; //for calculating the mid
+        //recursively dividing
+        divide(arr, si, mid);
+        divide(arr,mid+1, ei);
+        conquer(arr, si, mid, ei);
+
+    }
+
+
     public static void main(String[] args) {
-        int arr[] = {7,8,3,1,2};
+        int arr[] = {6,3,9,5,2,8};
+        int n = arr.length;
         /*
 
         //Bubble sort
@@ -41,7 +87,7 @@ public class Sorting_dataStructure {
             arr[i] = temp;
         }
 
-         */
+
 
         //insertion sort , Time complexity is O(n^2)
         for(int i=1;i<arr.length;i++){
@@ -56,6 +102,9 @@ public class Sorting_dataStructure {
 
         }
 
+         */
+        //for merged sort
+        divide(arr,0,n-1);
 
         //printing the array
         printArray(arr);
