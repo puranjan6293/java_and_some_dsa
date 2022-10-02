@@ -9,6 +9,7 @@ public class Sorting_dataStructure {
             System.out.print(arr[i]+" ");
         }
     }
+    /*
     //Merge sort, Divide & conquer technique
     //conquer , Time complexity --> O(n)
     public static void conquer(int arr[],int si, int mid, int ei){
@@ -49,6 +50,38 @@ public class Sorting_dataStructure {
         divide(arr,mid+1, ei);
         conquer(arr, si, mid, ei);
 
+    }
+     */
+    //Quick sort , time complexity is O(nlog n) & in worst case O(n^2)
+    //making pivot
+    public static int partition(int arr[], int low, int high){
+        int pivot = arr[high];
+        int i = low-1; //it tracks & locates the empty space for putting the smaller element than pivot in the array
+        for (int j=low; j<high; j++){
+            if(arr[j]<pivot){
+                i++;
+                //swap
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        //making empty space for the pivot
+        i++;
+        int temp = arr[i];
+        arr[i] = arr[high]; //pivot is the arr[high]
+        arr[high] = temp;
+
+        //ans
+        return i; //pivot index
+    }
+
+    public static void quickSort(int arr[], int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
     }
 
 
@@ -102,9 +135,13 @@ public class Sorting_dataStructure {
 
         }
 
-         */
+
         //for merged sort
         divide(arr,0,n-1);
+
+         */
+        //For Quick sort technique
+        quickSort(arr, 0, n-1);
 
         //printing the array
         printArray(arr);
