@@ -49,6 +49,8 @@ public class Recursion_chap7 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the input for Fibonacci: \n");
         int input = sc.nextInt();
-        System.out.println("The value is: "+fibonacci(input));
+        for (int i=0;i<input;i++){
+            System.out.println(fibonacci(i));
+        }
     }
 }
