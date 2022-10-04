@@ -1,5 +1,6 @@
 package DSA_Problems;
 public class Check_If_a_Array_is_sorted_recursion {
+    //check if the array is sorted or not, Time complexity --> O(n)
     public static boolean isSorted(int[]arr,int idx){
         //base condition
         if(idx==arr.length-1){
