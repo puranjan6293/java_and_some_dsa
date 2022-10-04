@@ -68,7 +68,7 @@ public class Recursion_java {
         }
     }
 
-     */
+
     //print x^n (n is stack height)
     public static int printXPowerN(int x, int n){
         //base conditions
@@ -81,6 +81,29 @@ public class Recursion_java {
         //work
         return x*printXPowerN(x,n-1);
     }
+
+     */
+    //print x^n (stack height log n)
+    public static int printXPowerN(int x, int n){
+        //base conditions
+        if(n==0){
+            return 1;
+        }
+        if (x==0){
+            return 0;
+        }
+        //if n is even
+        if(n%2==0){
+            return printXPowerN(x,n/2)*printXPowerN(x,n/2);
+        }
+        else {
+            //n is odd
+            return printXPowerN(x,n/2)*printXPowerN(x,n/2)*x;
+        }
+
+    }
+
+
 
 
 
@@ -106,8 +129,13 @@ public class Recursion_java {
             System.out.println(fibonacciNthTerm(i));
         }
          */
-        //for x to the power n
+        /*
+        //for x to the power n, stack height is n
         System.out.println(printXPowerN(2,3));
+         */
+        //for x to the power n, stack height is log n
+        System.out.println(printXPowerN(2,3));
+
 
     }
 }
