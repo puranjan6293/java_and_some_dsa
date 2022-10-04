@@ -54,6 +54,7 @@ public class Recursion_java {
     }
 
      */
+    /*
     //fibonacci series technique2
     public static int fibonacciNthTerm(int n){
         if(n==0){
@@ -65,6 +66,20 @@ public class Recursion_java {
         else {
             return fibonacciNthTerm(n-1)+fibonacciNthTerm(n-2);
         }
+    }
+
+     */
+    //print x^n (n is stack height)
+    public static int printXPowerN(int x, int n){
+        //base conditions
+        if(n==0){
+            return 1;
+        }
+        if (x==0){
+            return 0;
+        }
+        //work
+        return x*printXPowerN(x,n-1);
     }
 
 
@@ -84,12 +99,15 @@ public class Recursion_java {
         int n=7;
         fibonacciS(a,b,n-2);
          */
-
+        /*
         //for fibonacci part2
         int n=7;
         for (int i=0;i<n;i++){
             System.out.println(fibonacciNthTerm(i));
         }
+         */
+        //for x to the power n
+        System.out.println(printXPowerN(2,3));
 
     }
 }
