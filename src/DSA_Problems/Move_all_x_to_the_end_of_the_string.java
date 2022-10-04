@@ -1,5 +1,5 @@
 package DSA_Problems;
-//Move all x to the end of the string
+//Move all x to the end of the string, Time complexity--> O(n)
 public class Move_all_x_to_the_end_of_the_string {
     public static void moveAllX(String str,int idx,int count, String newString){
         //base condition, step5
