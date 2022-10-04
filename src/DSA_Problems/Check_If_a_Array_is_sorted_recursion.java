@@ -6,13 +6,11 @@ public class Check_If_a_Array_is_sorted_recursion {
             return true;
         }
         //approach
-        if(arr[idx]<arr[idx+1]){
-            //till now the array is sorted
-            return isSorted(arr,idx+1);
-        }
-        else {
+        if(arr[idx]>=arr[idx+1]){
+            //the array is unsorted
             return false;
         }
+        return isSorted(arr,idx+1);
     }
     public static void main(String[] args) {
         int[]arr = {1,2,3,4};
