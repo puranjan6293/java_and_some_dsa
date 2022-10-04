@@ -1,8 +1,7 @@
 package DSA_Problems;
 
-import Dsa.company.Sorting_dataStructure;
-
 public class remove_duplicates_from_a_string_recursion {
+    //remove duplicates in a string, Time complexity --> O(n)
     //step1
     public static boolean[]map = new boolean[26];
     //step2
