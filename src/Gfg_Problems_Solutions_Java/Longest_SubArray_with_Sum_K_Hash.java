@@ -2,6 +2,8 @@ package Gfg_Problems_Solutions_Java;
 
 import java.util.HashMap;
 
+//prefix sum technique
+//arr[i] = x+k
 public class Longest_SubArray_with_Sum_K_Hash {
     // Function for finding maximum and value pair
     public static int lenOfLongSubarr (int A[], int N, int K) {
