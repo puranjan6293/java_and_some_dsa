@@ -2,35 +2,36 @@ package LeetCode_solution;
 
 public class Recover_a__BST {
     /*
-    TreeNode prev = null;
     TreeNode first = null;
     TreeNode second = null;
-    TreeNode mid = null;
+    // TreeNode prev = new TreeNode(Integer.MIN_VALUE);
+    TreeNode prev = null;
     public void recoverTree(TreeNode root) {
-        inOrder(root);
-        if(first!=null && second!=null){
-            int temp = first.val;
-            first.val = second.val;
-            second.val = temp;
-        }
-        else if(first!=null && mid!=null){
-            int temp = first.val;
-            first.val = mid.val;
-            mid.val = temp;
-        }
+        //inOrder traversal to find the two elements
+        traverse(root);
+        //swap the values of the two nodes
+        int temp = first.val;
+        first.val = second.val;
+        second.val = temp;
+
     }
-    void inOrder(TreeNode root){
+    void traverse(TreeNode root){
         if(root==null) return;
-        inOrder(root.left);
-        if(prev!=null && root.val<prev.val){
-            if(first==null){
-                first=prev;
-                mid=root;
-            }
-            else second=root;
+        //traverse left
+        traverse(root.left);
+        //if first element is not been found, assign it to prev
+        if(prev!=null){
+            if(first==null && prev.val>=root.val){
+            first=prev;
+        }
+        }
+        //if first has found, assign it to second to the root
+        if(first!=null && prev.val>=root.val){
+            second=root;
         }
         prev=root;
-        inOrder(root.right);
+        //traverse right
+        traverse(root.right);
     }
 
      */
