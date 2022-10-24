@@ -1,5 +1,7 @@
 package LeetCode_solution;
 
+import java.util.*;
+
 public class Intersection_of_two_Arrays {
     public int[] intersect(int[] nums1, int[] nums2) {
         // Sort both the arrays first...
